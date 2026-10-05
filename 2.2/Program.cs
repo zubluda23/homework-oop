@@ -56,7 +56,7 @@ namespace WorkplaceApp
             Console.WriteLine("\n--- Detailed Team Information ---");
             team.ShowDetailedInfo();
 
-            Console.WriteLine("\nPress any key to exit...");
+           
             Console.ReadKey();
         }
     }

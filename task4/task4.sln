@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.1", "4.1\4.1.csproj", "{5
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "4.2", "4.2\4.2.csproj", "{A7AFF552-0825-4722-2CB5-1891E329B87C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopMAUI", "..\ShopMAUI\ShopMAUI.csproj", "{9CAD7B33-9BED-4B5C-897D-8D01F958D092}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{A7AFF552-0825-4722-2CB5-1891E329B87C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7AFF552-0825-4722-2CB5-1891E329B87C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7AFF552-0825-4722-2CB5-1891E329B87C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CAD7B33-9BED-4B5C-897D-8D01F958D092}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CAD7B33-9BED-4B5C-897D-8D01F958D092}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CAD7B33-9BED-4B5C-897D-8D01F958D092}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CAD7B33-9BED-4B5C-897D-8D01F958D092}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

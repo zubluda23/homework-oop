@@ -32,4 +32,5 @@ namespace WorkplaceApp
 
         public abstract void FillWorkDay();
     }
+
 }

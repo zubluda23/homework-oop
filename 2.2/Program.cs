@@ -50,10 +50,10 @@ namespace WorkplaceApp
                 }
             }
 
-            Console.WriteLine("\n--- General Team Information ---");
+            Console.WriteLine("\n General Team Information");
             team.ShowTeamInfo();
 
-            Console.WriteLine("\n--- Detailed Team Information ---");
+            Console.WriteLine("\n  Detailed Team Information ");
             team.ShowDetailedInfo();
 
            

@@ -4,39 +4,27 @@ namespace CurrencyConverterApp
 {
     public class Converter
     {
-        public decimal UsdRate { get; private set; }
-        public decimal EurRate { get; private set; }
+        
+        private readonly decimal _usdRate;
+        private readonly decimal _eurRate;
 
+      
         public Converter(decimal usdRate, decimal eurRate)
         {
             if (usdRate <= 0 || eurRate <= 0)
             {
-                throw new ArgumentException("Exchange rates must be greater than zero.");
+                throw new ArgumentException("Exchange rates must be strictly positive!");
             }
 
-            UsdRate = usdRate;
-            EurRate = eurRate;
+            _usdRate = usdRate;
+            _eurRate = eurRate;
         }
 
-        public decimal ConvertUahToUsd(decimal amountInUah)
-        {
-            return amountInUah / UsdRate;
-        }
+       
+        public decimal ConvertUahToUsd(decimal uah) => uah / _usdRate;
+        public decimal ConvertUahToEur(decimal uah) => uah / _eurRate;
 
-        public decimal ConvertUahToEur(decimal amountInUah)
-        {
-            return amountInUah / EurRate;
-        }
-
-     
-        public decimal ConvertUsdToUah(decimal amountInUsd)
-        {
-            return amountInUsd * UsdRate;
-        }
-
-        public decimal ConvertEurToUah(decimal amountInEur)
-        {
-            return amountInEur * EurRate;
-        }
+        public decimal ConvertUsdToUah(decimal usd) => usd * _usdRate;
+        public decimal ConvertEurToUah(decimal eur) => eur * _eurRate;
     }
 }

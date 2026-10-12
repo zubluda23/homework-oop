@@ -29,6 +29,10 @@ namespace WorkplaceApp
         {
             WorkDay += "Relax ";
         }
+        public void Test()
+        {
+            WorkDay += "Test ";
+        }
 
         public abstract void FillWorkDay();
     }

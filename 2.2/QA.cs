@@ -11,9 +11,18 @@ namespace WorkplaceApp
             Position = "QA";
             _random = new Random();
         }
+        
         public override void FillWorkDay()
         {
             int testsCount = _random.Next(MinTestsCount, MaxTestsCount + 1);
+            for (int i = 0; i < testsCount; i++)
+            {
+                Test();
+            }
+
+            Relax();
+
+            int testCount = _random.Next(MinTestsCount, MaxTestsCount + 1);
             for (int i = 0; i < testsCount; i++)
             {
                 Test();

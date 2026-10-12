@@ -17,6 +17,7 @@ namespace WorkplaceApp
                 Console.WriteLine("\nSelect worker role:");
                 Console.WriteLine("1 - Developer");
                 Console.WriteLine("2 - Manager");
+                Console.WriteLine("3 - QA ");
                 Console.WriteLine("0 - Finish adding workers");
                 Console.Write("Your choice: ");
 
@@ -43,6 +44,15 @@ namespace WorkplaceApp
                     Manager manager = new Manager(name);
                     manager.FillWorkDay();
                     team.AddWorker(manager);
+                }
+                else if (choice == "3")
+                {
+                    Console.Write("Enter QA's full name: ");
+                    string name = Console.ReadLine() ?? string.Empty;
+
+                    QA qa = new QA(name);
+                    qa.FillWorkDay();
+                    team.AddWorker(qa);
                 }
                 else
                 {

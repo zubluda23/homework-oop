@@ -9,14 +9,13 @@ namespace ShopMAUI
     {
         private ObservableCollection<Product> _products;
         private int _counter = 1;
-       
+        private bool _toggleProductType = false;
 
         public MainPage()
         {
             InitializeComponent();
 
             _products = new ObservableCollection<Product>();
-
             SeedInitialProducts();
 
             ProductsCollectionView.ItemsSource = _products;
@@ -28,73 +27,79 @@ namespace ShopMAUI
                 name: "Organic Milk",
                 price: 42.50m,
                 countryOfOrigin: "Ukraine",
-                packagingDate: DateTime.Now.AddDays(-2),
-                description: "Fresh pasteurized whole milk 3.2%",
-                expirationDate: DateTime.Now.AddDays(7),
-                quantity: 1.0,
-                unit: "L"));
+                packagingDate: new DateTime(2026, 10, 4),
+                description: "Fresh pasteurized milk",
+                expirationDate: new DateTime(2026, 10, 18),
+                quantity: 1,
+                unit: "L"
+            ));
 
             _products.Add(new FoodProduct(
                 name: "Cheddar Cheese",
                 price: 135.00m,
                 countryOfOrigin: "Poland",
-                packagingDate: DateTime.Now.AddDays(-10),
+                packagingDate: new DateTime(2026, 9, 26),
                 description: "Aged hard cheese",
-                expirationDate: DateTime.Now.AddDays(90),
+                expirationDate: new DateTime(2027, 1, 4),
                 quantity: 0.35,
-                unit: "kg"));
+                unit: "kg"
+            ));
 
             _products.Add(new Book(
                 name: "Clean Code",
                 price: 850.00m,
                 countryOfOrigin: "USA",
-                packagingDate: DateTime.Now.AddMonths(-6),
-                description: "A Handbook of Agile Software Craftsmanship",
+                packagingDate: new DateTime(2026, 4, 6),
+                description: "A handbook of agile software craftsmanship",
                 pageCount: 464,
                 publisher: "Prentice Hall",
-                authors: new List<string> { "Robert C. Martin" }));
+                authors: new List<string> { "Robert C. Martin" }
+            ));
 
             _products.Add(new Book(
                 name: "The C# Player's Guide",
                 price: 920.00m,
                 countryOfOrigin: "USA",
-                packagingDate: DateTime.Now.AddMonths(-3),
-                description: "Comprehensive guide to C# programming",
+                packagingDate: new DateTime(2026, 7, 6),
+                description: "Comprehensive tutorial for C# language",
                 pageCount: 520,
                 publisher: "Starbound",
-                authors: new List<string> { "RB Whitaker" }));
+                authors: new List<string> { "RB Whitaker" }
+            ));
         }
 
-        private void OnAddFoodClicked(object sender, EventArgs e)
+        private void OnAddProductClicked(object sender, EventArgs e)
         {
-            FoodProduct newFood = new FoodProduct(
-                name: $"Product #{_counter}",
-                price: 25.00m + (_counter * 5),
-                countryOfOrigin: "Ukraine",
-                packagingDate: DateTime.Now,
-                description: "Standard grocery item",
-                expirationDate: DateTime.Now.AddDays(14),
-                quantity: 1,
-                unit: "pcs");
-
-            _products.Add(newFood);
             _counter++;
-        }
 
-        private void OnAddBookClicked(object sender, EventArgs e)
-        {
-            Book newBook = new Book(
-                name: $"New Book #{_counter}",
-                price: 300.00m + (_counter * 10),
-                countryOfOrigin: "Ukraine",
-                packagingDate: DateTime.Now,
-                description: "Technical literature",
-                pageCount: 200 + (_counter * 20),
-                publisher: "Publishing House",
-                authors: new List<string> { "Author Name" });
+            if (_toggleProductType)
+            {
+                _products.Add(new FoodProduct(
+                    name: $"Food Item #{_counter}",
+                    price: 45.00m + _counter * 5,
+                    countryOfOrigin: "Ukraine",
+                    packagingDate: DateTime.Now,
+                    description: "Fresh delivery batch",
+                    expirationDate: DateTime.Now.AddDays(14),
+                    quantity: 1,
+                    unit: "pcs"
+                ));
+            }
+            else
+            {
+                _products.Add(new Book(
+                    name: $"Book Title #{_counter}",
+                    price: 250.00m + _counter * 15,
+                    countryOfOrigin: "USA",
+                    packagingDate: DateTime.Now,
+                    description: "Technical textbook edition",
+                    pageCount: 200 + _counter * 25,
+                    publisher: "TechPress",
+                    authors: new List<string> { $"Author {_counter}" }
+                ));
+            }
 
-            _products.Add(newBook);
-            _counter++;
+            _toggleProductType = !_toggleProductType;
         }
 
         private void OnDeleteClicked(object sender, EventArgs e)

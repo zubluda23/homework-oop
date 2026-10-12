@@ -9,14 +9,14 @@
           Padding="20"
           RowSpacing="15">
 
-        <!-- Заголовок -->
+      
         <Label Grid.Row="0"
                Text="Product Management System"
                FontSize="24"
                FontAttributes="Bold"
                HorizontalOptions="Center" />
 
-        <!-- Шапка таблиці -->
+       
         <Border Grid.Row="1"
                 Stroke="#CCCCCC"
                 StrokeThickness="1"
@@ -31,7 +31,7 @@
             </Grid>
         </Border>
 
-        <!-- Таблиця з переліком товарів -->
+        
         <Border Grid.Row="2"
                 Stroke="#E0E0E0"
                 StrokeThickness="1"
@@ -53,27 +53,22 @@
             </CollectionView>
         </Border>
 
-        <!-- Кнопки дій -->
         <Grid Grid.Row="3"
-              ColumnDefinitions="*, *, *"
-              ColumnSpacing="15">
+              ColumnDefinitions="*, *"
+              ColumnSpacing="20">
             <Button Grid.Column="0"
-                    Text="+ Add Food"
-                    Clicked="OnAddFoodClicked"
+                    Text="+ Add Product"
+                    Clicked="OnAddProductClicked"
                     BackgroundColor="#2E7D32"
-                    TextColor="White" />
+                    TextColor="White"
+                    FontSize="16" />
 
             <Button Grid.Column="1"
-                    Text="+ Add Book"
-                    Clicked="OnAddBookClicked"
-                    BackgroundColor="#1565C0"
-                    TextColor="White" />
-
-            <Button Grid.Column="2"
                     Text="- Delete Selected"
                     Clicked="OnDeleteClicked"
                     BackgroundColor="#C62828"
-                    TextColor="White" />
+                    TextColor="White"
+                    FontSize="16" />
         </Grid>
 
     </Grid>

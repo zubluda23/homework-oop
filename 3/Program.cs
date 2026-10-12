@@ -6,7 +6,7 @@ namespace CurrencyConverterApp
     {
         private static void Main(string[] args)
         {
-            Console.WriteLine("=== Currency Converter Setup ===");
+            Console.WriteLine(" Currency Converter Setup ");
 
             decimal usdRate = ReadPositiveDecimal("Enter USD rate to UAH (e.g., 41.5): ");
             decimal eurRate = ReadPositiveDecimal("Enter EUR rate to UAH (e.g., 45.2): ");
@@ -17,7 +17,7 @@ namespace CurrencyConverterApp
 
             while (isRunning)
             {
-                Console.WriteLine("\n--- Choose conversion option ---");
+                Console.WriteLine("\n Choose conversion option ");
                 Console.WriteLine("1 - Convert UAH to USD");
                 Console.WriteLine("2 - Convert UAH to EUR");
                 Console.WriteLine("3 - Convert USD to UAH");

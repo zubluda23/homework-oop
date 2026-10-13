@@ -1,38 +1,37 @@
-﻿namespace WorkplaceApp
+﻿namespace WorkplaceApp;
+
+public class Team
 {
-    public class Team
+    private List<Worker> _workers;
+
+    public string Name { get; set; }
+
+    public Team(string name)
     {
-        private List<Worker> _workers;
+        Name = name;
+        _workers = new List<Worker>();
+    }
 
-        public string Name { get; set; }
+    public void AddWorker(Worker worker)
+    {
+        _workers.Add(worker);
+    }
 
-        public Team(string name)
+    public void ShowTeamInfo()
+    {
+        Console.WriteLine($"Team: {Name}");
+        foreach (Worker worker in _workers)
         {
-            Name = name;
-            _workers = new List<Worker>();
+            Console.WriteLine(worker.Name);
         }
+    }
 
-        public void AddWorker(Worker worker)
+    public void ShowDetailedInfo()
+    {
+        Console.WriteLine($"Team: {Name}");
+        foreach (Worker worker in _workers)
         {
-            _workers.Add(worker);
-        }
-
-        public void ShowTeamInfo()
-        {
-            Console.WriteLine($"Team: {Name}");
-            foreach (Worker worker in _workers)
-            {
-                Console.WriteLine(worker.Name);
-            }
-        }
-
-        public void ShowDetailedInfo()
-        {
-            Console.WriteLine($"Team: {Name}");
-            foreach (Worker worker in _workers)
-            {
-                Console.WriteLine($"{worker.Name} - {worker.Position} - {worker.WorkDay.Trim()}");
-            }
+            Console.WriteLine($"{worker.Name} - {worker.Position} - {worker.WorkDay.Trim()}");
         }
     }
 }
